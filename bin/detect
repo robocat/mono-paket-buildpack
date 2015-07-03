@@ -1,7 +1,12 @@
 #!/bin/sh
 
-if [ -f $1/*.sln ] || [ -f $1/app.fsx ]; then
-    echo "SuaveFramework"
+BUILD_DIR=$1
+
+if [ -f ${BUILD_DIR}/paket.lock ]; then
+    echo 'Mono/Paket app detected: found `paket.lock` file'
+    exit 0
+elif [ -f ${BUILD_DIR}/paket.dependencies ]; then
+    echo 'Mono/Paket app detected: found `paket.dependencies` file'
     exit 0
 else
     exit 1

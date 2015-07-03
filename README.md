@@ -1,6 +1,6 @@
-# Heroku Build Pack for F# script + Suave
+# Heroku Build Pack for Mono and Paket
 
-This build pack is for implementing a Heroku website using an F# Interactive script app.fsx plus
-paket or nuget libraries, using the [Suave](http://suave.io) web server framework.
+[Paket](http://fsprojects.github.io/Paket/) is a package manager for Mono.
 
-See  [Suave](http://suave.io) for more details on how to use this
+Installs `mono 3.12.1`, `paket 0.35.0`, and latest `nuget`.
+Then tries to install dependencies from `paket.lock` or `paket.dependencies`.
